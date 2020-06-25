@@ -5,6 +5,10 @@ import junit.framework.TestCase;
 import java.util.Date;
 
 public class BasicTest extends TestCase {
+    protected void setUp() throws Exception{
+        System.out.println(System.getProperty("java.runtime.version"));
+    }
+
     public void test_for_jdk5() throws Exception {
         VO vo = new VO();
         vo.date = new Date();
@@ -13,8 +17,6 @@ public class BasicTest extends TestCase {
 
         System.out.println(str);
         JSON.parseObject(str, VO.class);
-
-
     }
 
     public static class VO {
